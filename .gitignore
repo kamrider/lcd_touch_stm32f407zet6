@@ -1,0 +1,57 @@
+# Keil specific files
+# Ignore user specific options, backup, intermediate files
+*.uvopt
+*.uvgui.*
+*.uvoptx
+*.uvguix.*
+*.bak
+*.ddk
+*.edk
+*.lnp
+*.mpf
+*.mpj
+*.omf
+*.plg
+*.rpt
+.__i
+*.crf
+*.d
+*.tra
+*.dep
+*.iex
+*.htm
+*.Administrator
+
+# Keep project file itself (usually)
+# *.uvprojx
+
+# Build output within MDK-ARM (Objects, Listings, Maps, Binaries)
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+MDK-ARM/*.map
+MDK-ARM/*.elf
+MDK-ARM/*.axf
+MDK-ARM/*.hex
+MDK-ARM/*.bin
+# Also ignore top-level output files if they exist (less common for CubeMX MDK)
+*.obj
+*.o
+*.lst
+
+# Ignore Run-Time Environment if managed by CubeMX/Pack Installer
+MDK-ARM/RTE/
+
+# Other Keil/Debug related files
+*.sct # Scatter file - ignore if generated, keep if manually edited
+*.scvd
+JLinkLog.txt
+
+# IDE specific files (e.g., VSCode)
+.vscode/
+
+# Other common ignores
+*.log
+*.tmp
+*~
+
+
