@@ -18,12 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "spi.h"
 #include "gpio.h"
 #include "fsmc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "lcd.h"
+#include "touch.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,17 +90,24 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_FSMC_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
- 	LCD_Init();           //│ї╩╝╗пLCD FSMC╜╙┐┌
-	POINT_COLOR=RED;      //╗н▒╩╤╒╔лг║║ь╔л
+ 	LCD_Init();           //я┐╜я┐╜╩╝я┐╜я┐╜LCD FSMCя┐╜╙┐я┐╜
+	POINT_COLOR=RED;      //я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╔ля┐╜я┐╜я┐╜я┐╜╔л
+	tp_dev.init();				//┬┤┬е├Г├╛├Ж├Б┬│├╡├К┬╝┬╗┬п
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-Demo_Menu();
+    	LCD_ShowString(16,20,200,16,16,RED,"mcudev STM32F4");	
+	LCD_ShowString(16,40,200,16,16,RED,"TOUCH TEST");	
+	LCD_ShowString(16,60,200,16,16,RED,"mcudev.taobao.com");
+	LCD_ShowString(16,80,200,16,16,RED,"2019/1/15");
+		/* USER CODE END WHILE */
+	HAL_Delay(1500);  
+	TP_Adjust();				//┬╡├з├Ч├и├Ж├Б┬▓├в├К├Ф
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
